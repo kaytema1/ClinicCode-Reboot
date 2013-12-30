@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Invoice" table="invoice" catalog="extended">
+        <id name="invoiceId" type="java.lang.Integer">
+            <column name="invoice_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="stafftable" class="entities.Stafftable" fetch="select">
+            <column name="received_by" not-null="true" />
+        </many-to-one>
+        <many-to-one name="supplier" class="entities.Supplier" fetch="select">
+            <column name="supplier_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="purchaseOrder" class="entities.PurchaseOrder" fetch="select">
+            <column name="orderid" not-null="true" />
+        </many-to-one>
+        <property name="supplierInvoice" type="string">
+            <column name="supplier_invoice" not-null="true" />
+        </property>
+        <property name="vatValue" type="java.lang.Double">
+            <column name="vat_value" precision="22" scale="0" />
+        </property>
+        <property name="percentageDiscount" type="double">
+            <column name="percentage_discount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="priceDiscount" type="double">
+            <column name="price_discount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="65535" />
+        </property>
+        <property name="invoiceDate" type="date">
+            <column name="invoice_date" length="10" not-null="true" />
+        </property>
+        <property name="dateReceived" type="date">
+            <column name="date_received" length="10" not-null="true" />
+        </property>
+        <property name="invoiceAmount" type="double">
+            <column name="invoice_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="netTotal" type="double">
+            <column name="net_total" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="taxAmount" type="double">
+            <column name="tax_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <set name="pharmacyBatchs" inverse="true">
+            <key>
+                <column name="invoice_id" not-null="true" />
+            </key>
+            <one-to-many class="entities.PharmacyBatch" />
+        </set>
+        <set name="laboratoryBatchs" inverse="true">
+            <key>
+                <column name="invoice_id" not-null="true" />
+            </key>
+            <one-to-many class="entities.LaboratoryBatch" />
+        </set>
+        <set name="dispensaryBatchs" inverse="true">
+            <key>
+                <column name="invoice_id" not-null="true" />
+            </key>
+            <one-to-many class="entities.DispensaryBatch" />
+        </set>
+        <set name="itemBatchs" inverse="true">
+            <key>
+                <column name="invoice_id" not-null="true" />
+            </key>
+            <one-to-many class="entities.ItemBatch" />
+        </set>
+    </class>
+</hibernate-mapping>

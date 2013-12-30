@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.ClinicInventoryRequests" table="clinic_inventory_requests" catalog="extended">
+        <id name="requisitionid" type="java.lang.Integer">
+            <column name="requisitionid" />
+            <generator class="identity" />
+        </id>
+        <property name="itemcode" type="string">
+            <column name="itemcode" length="100" not-null="true" />
+        </property>
+        <property name="orderer" type="string">
+            <column name="orderer" length="65535" not-null="true" />
+        </property>
+        <property name="orderdate" type="timestamp">
+            <column name="orderdate" length="19" not-null="true" />
+        </property>
+        <property name="deliverydate" type="timestamp">
+            <column name="deliverydate" length="19" />
+        </property>
+        <property name="deliverer" type="string">
+            <column name="deliverer" length="65535" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="65535" not-null="true" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="65535" not-null="true" />
+        </property>
+        <property name="requestedquantity" type="int">
+            <column name="requestedquantity" not-null="true" />
+        </property>
+        <property name="deliveredquantity" type="int">
+            <column name="deliveredquantity" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

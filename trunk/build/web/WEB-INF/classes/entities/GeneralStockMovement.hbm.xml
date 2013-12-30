@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.GeneralStockMovement" table="general_stock_movement" catalog="extended">
+        <id name="moveId" type="java.lang.Integer">
+            <column name="move_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="stafftableByIssuedBy" class="entities.Stafftable" fetch="select">
+            <column name="issued_by" not-null="true" />
+        </many-to-one>
+        <many-to-one name="dispensaryBatch" class="entities.DispensaryBatch" fetch="select">
+            <column name="dispensary_batch_number" length="100" />
+        </many-to-one>
+        <many-to-one name="stafftableByIssuedTo" class="entities.Stafftable" fetch="select">
+            <column name="issued_to" />
+        </many-to-one>
+        <many-to-one name="pharmacyBatch" class="entities.PharmacyBatch" fetch="select">
+            <column name="pharmacy_batch_number" />
+        </many-to-one>
+        <property name="dateOfMovement" type="date">
+            <column name="date_of_movement" length="10" not-null="true" />
+        </property>
+        <property name="quantityB4Transfer" type="int">
+            <column name="quantity_b4_transfer" not-null="true" />
+        </property>
+        <property name="quantityTransferred" type="int">
+            <column name="quantity_transferred" not-null="true" />
+        </property>
+        <property name="quantityAfterTransfer" type="int">
+            <column name="quantity_after_transfer" not-null="true" />
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

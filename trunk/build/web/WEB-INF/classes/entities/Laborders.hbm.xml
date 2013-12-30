@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Laborders" table="laborders" catalog="extended">
+        <id name="orderid" type="string">
+            <column name="orderid" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="patientid" type="string">
+            <column name="patientid" length="50" not-null="true" />
+        </property>
+        <property name="facility" type="string">
+            <column name="facility" length="65535" not-null="true" />
+        </property>
+        <property name="fromdoc" type="string">
+            <column name="fromdoc" not-null="true" />
+        </property>
+        <property name="todoc" type="string">
+            <column name="todoc" />
+        </property>
+        <property name="physician" type="string">
+            <column name="physician" length="65535" not-null="true" />
+        </property>
+        <property name="totalAmount" type="double">
+            <column name="total_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="orderdate" type="timestamp">
+            <column name="orderdate" length="19" not-null="true" />
+        </property>
+        <property name="donedate" type="timestamp">
+            <column name="donedate" length="19" />
+        </property>
+        <property name="viewed" type="java.lang.Boolean">
+            <column name="viewed" />
+        </property>
+        <property name="visitid" type="int">
+            <column name="visitid" not-null="true" />
+        </property>
+        <property name="done" type="string">
+            <column name="done" length="20" not-null="true" />
+        </property>
+        <property name="amountpaid" type="java.lang.Double">
+            <column name="amountpaid" precision="22" scale="0" />
+        </property>
+        <property name="outstanding" type="java.lang.Double">
+            <column name="outstanding" precision="22" scale="0" />
+        </property>
+        <property name="scrutinized" type="string">
+            <column name="scrutinized" length="65535" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="receivedBy" type="string">
+            <column name="received_by" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

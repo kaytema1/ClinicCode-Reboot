@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PatientProcedure" table="patient_procedure" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="patientid" type="string">
+            <column name="patientid" length="100" not-null="true" />
+        </property>
+        <property name="procedureCode" type="string">
+            <column name="procedure_code" length="100" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="visitid" type="int">
+            <column name="visitid" not-null="true" />
+        </property>
+        <property name="amountpaid" type="double">
+            <column name="amountpaid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="copaid" type="boolean">
+            <column name="copaid" not-null="true" />
+        </property>
+        <property name="isPrivate" type="boolean">
+            <column name="is_private" not-null="true" />
+        </property>
+        <property name="secondaryAmount" type="double">
+            <column name="secondary_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="privateAmount" type="double">
+            <column name="private_amount" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

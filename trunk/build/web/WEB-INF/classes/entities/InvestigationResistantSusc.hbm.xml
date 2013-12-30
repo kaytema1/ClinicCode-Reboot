@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.InvestigationResistantSusc" table="investigation_resistant_susc" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ptreatmentId" type="int">
+            <column name="ptreatment_id" not-null="true" />
+        </property>
+        <property name="susceptibleTo" type="int">
+            <column name="susceptible_to" not-null="true" />
+        </property>
+        <property name="resistantTo" type="int">
+            <column name="resistant_to" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

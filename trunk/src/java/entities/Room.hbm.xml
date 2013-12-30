@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Room" table="room" catalog="extended">
+        <id name="roomid" type="java.lang.Integer">
+            <column name="roomid" />
+            <generator class="identity" />
+        </id>
+        <property name="description" type="string">
+            <column name="description" length="65535" not-null="true" />
+        </property>
+        <property name="numberOfBeds" type="int">
+            <column name="number_of_beds" not-null="true" />
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true" />
+        </property>
+        <property name="cost" type="double">
+            <column name="cost" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="wardId" type="int">
+            <column name="ward_id" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

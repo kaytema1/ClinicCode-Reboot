@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Claimtable" table="claimtable" catalog="extended">
+        <id name="tableid" type="java.lang.Integer">
+            <column name="tableid" />
+            <generator class="identity" />
+        </id>
+        <property name="claimid" type="int">
+            <column name="claimid" not-null="true" />
+        </property>
+        <property name="sportype" type="string">
+            <column name="sportype" length="20" not-null="true" />
+        </property>
+        <property name="visitid" type="int">
+            <column name="visitid" not-null="true" />
+        </property>
+        <property name="patientid" type="string">
+            <column name="patientid" length="100" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="100" not-null="true" />
+        </property>
+        <property name="totalClaim" type="java.lang.Double">
+            <column name="total_claim" precision="22" scale="0" />
+        </property>
+        <property name="claimDate" type="date">
+            <column name="claim_date" length="10" not-null="true" />
+        </property>
+        <property name="firstVisit" type="date">
+            <column name="first_visit" length="10" not-null="true" />
+        </property>
+        <property name="secondVisit" type="date">
+            <column name="second_visit" length="10" />
+        </property>
+        <property name="thirdVisit" type="date">
+            <column name="third_visit" length="10" />
+        </property>
+        <property name="fourthVisit" type="date">
+            <column name="fourth_visit" length="10" />
+        </property>
+        <property name="secondVisitid" type="java.lang.Integer">
+            <column name="second_visitid" />
+        </property>
+        <property name="thirdVisitid" type="java.lang.Integer">
+            <column name="third_visitid" />
+        </property>
+        <property name="fourthVisitid" type="java.lang.Integer">
+            <column name="fourth_visitid" />
+        </property>
+        <property name="patientage" type="int">
+            <column name="patientage" not-null="true" />
+        </property>
+        <property name="badgeid" type="string">
+            <column name="badgeid" length="65535" not-null="true" />
+        </property>
+        <property name="returnAmount" type="double">
+            <column name="return_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="returnNotes" type="string">
+            <column name="return_notes" length="65535" not-null="true" />
+        </property>
+        <property name="insuranceid" type="string">
+            <column name="insuranceid" length="65535" not-null="true" />
+        </property>
+        <property name="acceptReject" type="string">
+            <column name="accept_reject" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

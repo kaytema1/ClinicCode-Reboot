@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.BackupSyncTable" table="backup_sync_table" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="syncfrequency" type="java.lang.Integer">
+            <column name="syncfrequency" />
+        </property>
+        <property name="dayDate" type="date">
+            <column name="day_date" length="10" />
+        </property>
+        <property name="time" type="java.lang.Integer">
+            <column name="time" />
+        </property>
+        <property name="amPm" type="string">
+            <column name="am_pm" length="10" />
+        </property>
+        <property name="backFrequncy" type="java.lang.Integer">
+            <column name="back_frequncy" />
+        </property>
+    </class>
+</hibernate-mapping>

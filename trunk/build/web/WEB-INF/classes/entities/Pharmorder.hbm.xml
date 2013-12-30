@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Pharmorder" table="pharmorder" catalog="extended">
+        <id name="orderid" type="string">
+            <column name="orderid" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="patientid" type="string">
+            <column name="patientid" length="65535" not-null="true" />
+        </property>
+        <property name="fromdoc" type="string">
+            <column name="fromdoc" length="65535" />
+        </property>
+        <property name="orderdate" type="date">
+            <column name="orderdate" length="10" not-null="true" />
+        </property>
+        <property name="dispenseddate" type="date">
+            <column name="dispenseddate" length="10" />
+        </property>
+        <property name="visitid" type="java.lang.Integer">
+            <column name="visitid" />
+        </property>
+        <property name="dispensed" type="string">
+            <column name="dispensed" length="50" />
+        </property>
+        <property name="amoutpaid" type="java.lang.Double">
+            <column name="amoutpaid" precision="22" scale="0" />
+        </property>
+        <property name="outstanding" type="java.lang.Double">
+            <column name="outstanding" precision="22" scale="0" />
+        </property>
+        <property name="totalAmount" type="double">
+            <column name="total_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="dispensedBy" type="string">
+            <column name="dispensed_by" not-null="true" />
+        </property>
+        <property name="receivedBy" type="string">
+            <column name="received_by" not-null="true" />
+        </property>
+        <set name="transitionOrders" inverse="true">
+            <key>
+                <column name="pharmacy_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="entities.TransitionOrder" />
+        </set>
+        <set name="patienttreatments" inverse="true">
+            <key>
+                <column name="orderid" length="50" not-null="true" />
+            </key>
+            <one-to-many class="entities.Patienttreatment" />
+        </set>
+    </class>
+</hibernate-mapping>

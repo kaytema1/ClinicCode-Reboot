@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Patienttreatment" table="patienttreatment" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="transitionOrder" class="entities.TransitionOrder" fetch="select">
+            <column name="transition_id" />
+        </many-to-one>
+        <many-to-one name="dosage" class="entities.Dosage" fetch="select">
+            <column name="dosage" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pharmacyItem" class="entities.PharmacyItem" fetch="select">
+            <column name="pharmacy_item_code" length="100" />
+        </many-to-one>
+        <many-to-one name="pharmacyorder" class="entities.Pharmacyorder" fetch="select">
+            <column name="pharmacy_order_id" length="100" />
+        </many-to-one>
+        <many-to-one name="dispensaryItems" class="entities.DispensaryItems" fetch="select">
+            <column name="dispensary_item_code" length="100" />
+        </many-to-one>
+        <many-to-one name="pharmorder" class="entities.Pharmorder" fetch="select">
+            <column name="orderid" length="50" not-null="true" />
+        </many-to-one>
+        <property name="treatmentid" type="int">
+            <column name="treatmentid" not-null="true" />
+        </property>
+        <property name="visitationid" type="int">
+            <column name="visitationid" not-null="true" />
+        </property>
+        <property name="price" type="double">
+            <column name="price" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="quantity" />
+        </property>
+        <property name="dispensed" type="string">
+            <column name="dispensed" length="10" not-null="true" />
+        </property>
+        <property name="amounpaid" type="java.lang.Double">
+            <column name="amounpaid" precision="22" scale="0" />
+        </property>
+        <property name="copaid" type="java.lang.Boolean">
+            <column name="copaid" />
+        </property>
+        <property name="isPrivate" type="java.lang.Boolean">
+            <column name="is_private" />
+        </property>
+        <property name="secondaryAmount" type="java.lang.Double">
+            <column name="secondary_amount" precision="22" scale="0" />
+        </property>
+        <property name="privateAmount" type="java.lang.Double">
+            <column name="private_amount" precision="22" scale="0" />
+        </property>
+        <property name="vatValue" type="java.lang.Double">
+            <column name="vat_value" precision="22" scale="0" />
+        </property>
+        <property name="netValue" type="java.lang.Double">
+            <column name="net_value" precision="22" scale="0" />
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="22" scale="0" />
+        </property>
+        <set name="patientTreatmentBatchs" inverse="true">
+            <key>
+                <column name="patient_treatment_id" not-null="true" />
+            </key>
+            <one-to-many class="entities.PatientTreatmentBatch" />
+        </set>
+    </class>
+</hibernate-mapping>

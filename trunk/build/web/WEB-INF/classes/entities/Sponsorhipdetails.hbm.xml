@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Sponsorhipdetails" table="sponsorhipdetails" catalog="extended">
+        <id name="patientid" type="string">
+            <column name="patientid" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="membershipid" type="string">
+            <column name="membershipid" length="50" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="250" />
+        </property>
+        <property name="benefitplan" type="string">
+            <column name="benefitplan" length="200" />
+        </property>
+        <property name="sponsorid" type="string">
+            <column name="sponsorid" length="50" />
+        </property>
+        <property name="dependentnumber" type="string">
+            <column name="dependentnumber" length="65535" />
+        </property>
+        <property name="secondarySponsor" type="string">
+            <column name="secondary_sponsor" length="50" />
+        </property>
+        <property name="secondaryType" type="string">
+            <column name="secondary_type" length="65535" />
+        </property>
+        <property name="secondaryBenefitplan" type="string">
+            <column name="secondary_benefitplan" length="65535" />
+        </property>
+        <property name="secondaryMembership" type="string">
+            <column name="secondary_membership" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

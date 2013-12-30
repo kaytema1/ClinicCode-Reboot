@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Pharmacyorder" table="pharmacyorder" catalog="extended">
+        <id name="orderId" type="string">
+            <column name="order_id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="stafftableByStaffId" class="entities.Stafftable" fetch="select">
+            <column name="staff_id" />
+        </many-to-one>
+        <many-to-one name="stafftableByPharmacist" class="entities.Stafftable" fetch="select">
+            <column name="pharmacist" />
+        </many-to-one>
+        <many-to-one name="stafftableByDispensedBy" class="entities.Stafftable" fetch="select">
+            <column name="dispensed_by" />
+        </many-to-one>
+        <many-to-one name="clientInfo" class="entities.ClientInfo" fetch="select">
+            <column name="client_info_id" length="50" />
+        </many-to-one>
+        <property name="dispensedDate" type="timestamp">
+            <column name="dispensed_date" length="19" />
+        </property>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+        <property name="totalCost" type="double">
+            <column name="total_cost" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="amountPaid" type="double">
+            <column name="amount_paid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="outstandingAmount" type="double">
+            <column name="outstanding_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="string">
+            <column name="payment_status" length="100" />
+        </property>
+        <property name="requestedBy" type="string">
+            <column name="requested_by" length="100" not-null="true" />
+        </property>
+        <property name="visitId" type="java.lang.Integer">
+            <column name="visit_id" />
+        </property>
+        <property name="discounted" type="java.lang.Boolean">
+            <column name="discounted" />
+        </property>
+        <set name="patienttreatments" inverse="true">
+            <key>
+                <column name="pharmacy_order_id" length="100" />
+            </key>
+            <one-to-many class="entities.Patienttreatment" />
+        </set>
+    </class>
+</hibernate-mapping>

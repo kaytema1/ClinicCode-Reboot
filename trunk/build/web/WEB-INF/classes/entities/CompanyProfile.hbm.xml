@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.CompanyProfile" table="company_profile" catalog="extended">
+        <id name="companyid" type="string">
+            <column name="companyid" length="200" />
+            <generator class="assigned" />
+        </id>
+        <property name="comapnyname" type="string">
+            <column name="comapnyname" length="65535" not-null="true" />
+        </property>
+        <property name="servicenumber" type="string">
+            <column name="servicenumber" length="65535" not-null="true" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="65535" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="65535" not-null="true" />
+        </property>
+        <property name="eclaimnumber" type="string">
+            <column name="eclaimnumber" length="65535" not-null="true" />
+        </property>
+        <property name="clinicFolderCode" type="string">
+            <column name="clinic_folder_code" length="10" not-null="true" />
+        </property>
+        <property name="diagnosticsFolderCode" type="string">
+            <column name="diagnostics_folder_code" length="10" not-null="true" />
+        </property>
+        <property name="clinicFolderStartNumber" type="int">
+            <column name="clinic_folder_start_number" not-null="true" />
+        </property>
+        <property name="diagnosticFolderStartNumber" type="int">
+            <column name="diagnostic_folder_start_number" not-null="true" />
+        </property>
+        <property name="clinicFolderStartActive" type="int">
+            <column name="clinic_folder_start_active" not-null="true" />
+        </property>
+        <property name="labFolderStartActive" type="int">
+            <column name="lab_folder_start_active" not-null="true" />
+        </property>
+        <property name="labReportHeaderActive" type="boolean">
+            <column name="lab_report_header_active" not-null="true" />
+        </property>
+        <property name="labReportFooterActive" type="boolean">
+            <column name="lab_report_footer_active" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

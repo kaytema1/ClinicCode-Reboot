@@ -1,0 +1,98 @@
+
+/* ========================================================
+   Switch
+   ===================================================== */
+.switch-container {
+    display: block;
+    padding: 5px 5px 5px 10px;
+    line-height: 23px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.switch-container + .switch-container {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.switch {
+    position: relative;
+    /* float: right; */
+    line-height: 21px;
+    width: 74px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    background-color: #F7F7F7;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #EAEAEA);
+    background-repeat: repeat-x;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    display: block;
+    color: #404040;
+ /*   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4b4b4b), color-stop(50%, #494949), color-stop(51%, #505050), color-stop(100%, #5b5b5b));
+    background-image: -webkit-linear-gradient(top, #4b4b4b 0%, #494949 50%, #505050 51%, #5b5b5b 100%);
+    background-image: -moz-linear-gradient(top, #4b4b4b 0%, #494949 50%, #505050 51%, #5b5b5b 100%);
+    background-image: -ms-linear-gradient(top, #4b4b4b 0%, #494949 50%, #505050 51%, #5b5b5b 100%);
+    background-image: -o-linear-gradient(top, #4b4b4b 0%, #494949 50%, #505050 51%, #5b5b5b 100%);
+    background-image: linear-gradient(top, #4b4b4b 0%, #494949 50%, #505050 51%, #5b5b5b 100%);
+ */   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.switch-label {
+    float: left;
+    width: 37px;
+    font-size: 12px;
+   
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.switch-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    border-radius: 3px;
+    background-color: #c8c8c8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2d2d2), color-stop(100%, #888888));
+    background-image: -webkit-linear-gradient(top, #d2d2d2, #888888);
+    background-image: -moz-linear-gradient(top, #d2d2d2, #888888);
+    background-image: -ms-linear-gradient(top, #d2d2d2, #888888);
+    background-image: -o-linear-gradient(top, #d2d2d2, #888888);
+    background-image: linear-gradient(top, #d2d2d2, #888888);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -ms-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
+}
+
+.switch-input {
+    display: none;
+}
+.switch-input:checked + .switch {
+    background-color: #35AFE3;
+    background-image: -moz-linear-gradient(center top , #45C7EB, #2698DB);
+    box-shadow: 0 1px 0 0 #6AD2EF inset;
+    color: #FFFFFF;
+   /* background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a92488), color-stop(50%, #a52485), color-stop(51%, #bb0096), color-stop(100%, #c331a0));
+    background-image: -webkit-linear-gradient(top, #a92488 0%, #a52485 50%, #bb0096 51%, #c331a0 100%);
+    background-image: -moz-linear-gradient(top, #a92488 0%, #a52485 50%, #bb0096 51%, #c331a0 100%);
+    background-image: -ms-linear-gradient(top, #a92488 0%, #a52485 50%, #bb0096 51%, #c331a0 100%);
+    background-image: -o-linear-gradient(top, #a92488 0%, #a52485 50%, #bb0096 51%, #c331a0 100%);
+    background-image: linear-gradient(top, #a92488 0%, #a52485 50%, #bb0096 51%, #c331a0 100%);
+*/
+    }
+.switch-input:checked + .switch .switch-handle {
+    left: 39px;
+}

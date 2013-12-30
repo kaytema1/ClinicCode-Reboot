@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Sponsorship" table="sponsorship" catalog="extended">
+        <id name="sponshorshipid" type="string">
+            <column name="sponshorshipid" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="sponsorname" type="string">
+            <column name="sponsorname" length="150" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="150" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="150" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" length="10" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="labmarkup" type="java.lang.Double">
+            <column name="labmarkup" precision="22" scale="0" />
+        </property>
+        <property name="treatmentMarkup" type="java.lang.Double">
+            <column name="treatment_markup" precision="22" scale="0" />
+        </property>
+        <property name="markupTreatPercentage" type="double">
+            <column name="markup_treat_percentage" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="markupLabPercentage" type="double">
+            <column name="markup_lab_percentage" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

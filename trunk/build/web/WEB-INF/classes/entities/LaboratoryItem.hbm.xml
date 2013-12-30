@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.LaboratoryItem" table="laboratory_item" catalog="extended">
+        <id name="itemCode" type="string">
+            <column name="item_code" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="therapeuticGroup" class="entities.TherapeuticGroup" fetch="select">
+            <column name="therapeutic_group" not-null="true" />
+        </many-to-one>
+        <many-to-one name="unitsOfMeasure" class="entities.UnitsOfMeasure" fetch="select">
+            <column name="unit_of_issue" not-null="true" />
+        </many-to-one>
+        <many-to-one name="itemForm" class="entities.ItemForm" fetch="select">
+            <column name="form_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="inventoryItems" class="entities.InventoryItems" update="false" insert="false" fetch="select">
+            <column name="item_code" length="100" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="itemDescription" type="string">
+            <column name="item_description" not-null="true" />
+        </property>
+        <property name="quantityOnHand" type="int">
+            <column name="quantity_on_hand" not-null="true" />
+        </property>
+        <property name="manufacturer" type="string">
+            <column name="manufacturer" length="500" not-null="true" />
+        </property>
+        <property name="priceMarkup" type="double">
+            <column name="price_markup" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="percentageMarkup" type="double">
+            <column name="percentage_markup" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="reorderLevel" type="int">
+            <column name="reorder_level" not-null="true" />
+        </property>
+        <property name="minimumStockLevel" type="int">
+            <column name="minimum_stock_level" not-null="true" />
+        </property>
+        <property name="strength" type="string">
+            <column name="strength" not-null="true" />
+        </property>
+        <property name="activeIngredients" type="string">
+            <column name="active_ingredients" length="1000" not-null="true" />
+        </property>
+        <property name="reorderQty" type="int">
+            <column name="reorder_qty" not-null="true" />
+        </property>
+        <property name="maximumStockLevel" type="java.lang.Integer">
+            <column name="maximum_stock_level" />
+        </property>
+        <property name="vatable" type="boolean">
+            <column name="vatable" not-null="true" />
+        </property>
+        <set name="laboratoryBatchs" inverse="true">
+            <key>
+                <column name="item_code" length="100" not-null="true" />
+            </key>
+            <one-to-many class="entities.LaboratoryBatch" />
+        </set>
+    </class>
+</hibernate-mapping>

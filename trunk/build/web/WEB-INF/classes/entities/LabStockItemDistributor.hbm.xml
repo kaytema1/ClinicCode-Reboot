@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2013 10:35:11 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.LabStockItemDistributor" table="lab_stock_item_distributor" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="itemId" type="int">
+            <column name="item_id" not-null="true" />
+        </property>
+        <property name="distributorId" type="int">
+            <column name="distributor_id" not-null="true" />
+        </property>
+        <property name="currentLevel" type="double">
+            <column name="current_level" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="spentLevel" type="double">
+            <column name="spent_level" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="totalLevel" type="double">
+            <column name="total_level" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

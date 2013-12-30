@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Qualification" table="qualification" catalog="extended">
+        <id name="quid" type="java.lang.Integer">
+            <column name="quid" />
+            <generator class="identity" />
+        </id>
+        <property name="qualification" type="string">
+            <column name="qualification" not-null="true" />
+        </property>
+        <property name="startyear" type="string">
+            <column name="startyear" length="4" />
+        </property>
+        <property name="endyear" type="string">
+            <column name="endyear" length="4" />
+        </property>
+        <property name="institution" type="string">
+            <column name="institution" not-null="true" />
+        </property>
+        <property name="staffid" type="string">
+            <column name="staffid" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PatientProcedureWalkins" table="patient_procedure_walkins" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderid" type="string">
+            <column name="orderid" not-null="true" />
+        </property>
+        <property name="procedureCode" type="string">
+            <column name="procedure_code" not-null="true" />
+        </property>
+        <property name="procedurePrice" type="double">
+            <column name="procedure_price" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

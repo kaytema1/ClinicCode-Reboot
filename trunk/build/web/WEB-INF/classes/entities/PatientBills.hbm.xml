@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PatientBills" table="patient_bills" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="billType" type="string">
+            <column name="bill_type" not-null="true" />
+        </property>
+        <property name="patientid" type="string">
+            <column name="patientid" length="65535" not-null="true" />
+        </property>
+        <property name="visitid" type="int">
+            <column name="visitid" not-null="true" />
+        </property>
+        <property name="totalBill" type="double">
+            <column name="total_bill" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="amountPaid" type="double">
+            <column name="amount_paid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="65535" not-null="true" />
+        </property>
+        <property name="laborderDiscount" type="int">
+            <column name="laborder_discount" not-null="true" />
+        </property>
+        <property name="pharmorderDiscount" type="int">
+            <column name="pharmorder_discount" not-null="true" />
+        </property>
+        <property name="medicalDiscount" type="int">
+            <column name="medical_discount" not-null="true" />
+        </property>
+        <property name="procedureDiscount" type="int">
+            <column name="procedure_discount" not-null="true" />
+        </property>
+        <property name="billdate" type="timestamp">
+            <column name="billdate" length="19" not-null="true" />
+        </property>
+        <property name="staffId" type="string">
+            <column name="staff_id" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.DiagnosticGroupings" table="diagnostic_groupings" catalog="extended">
+        <id name="code" type="string">
+            <column name="code" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="descriptio" type="string">
+            <column name="descriptio" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

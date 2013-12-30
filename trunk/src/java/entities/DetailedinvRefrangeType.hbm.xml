@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 11, 2012 6:51:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.DetailedinvRefrangeType" table="detailedinv_refrange_type" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="detailedinvId" type="int">
+            <column name="detailedinv_id" not-null="true" />
+        </property>
+        <property name="refRangeType" type="string">
+            <column name="ref_range_type" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

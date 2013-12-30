@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.ArchivedRefRangeUni" table="archived_ref_range_uni" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="detailedinvRefrangeTypeId" type="int">
+            <column name="detailedinv_refrange_type_id" not-null="true" />
+        </property>
+        <property name="selected" type="int">
+            <column name="selected" not-null="true" />
+        </property>
+        <property name="lowerRefRange" type="string">
+            <column name="lower_ref_range" length="25" />
+        </property>
+        <property name="upperRefRange" type="string">
+            <column name="upper_ref_range" length="25" />
+        </property>
+        <property name="paragraphic" type="string">
+            <column name="paragraphic" length="65535" />
+        </property>
+        <property name="orderid" type="string">
+            <column name="orderid" length="65535" not-null="true" />
+        </property>
+        <property name="patienttreatmentid" type="int">
+            <column name="patienttreatmentid" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

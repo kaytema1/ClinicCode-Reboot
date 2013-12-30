@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PaymentObject" table="payment_object" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="transactionId" type="string">
+            <column name="transaction_id" not-null="true" />
+        </property>
+        <property name="transactionType" type="string">
+            <column name="transaction_type" not-null="true" />
+        </property>
+        <property name="itemId" type="string">
+            <column name="item_id" />
+        </property>
+        <property name="primarySponsorId" type="string">
+            <column name="primary_sponsor_id" length="50" />
+        </property>
+        <property name="primarySponsorAmount" type="java.lang.Double">
+            <column name="primary_sponsor_amount" precision="22" scale="0" />
+        </property>
+        <property name="secSponsorId" type="string">
+            <column name="sec_sponsor_id" length="50" />
+        </property>
+        <property name="secSponsorAmount" type="java.lang.Double">
+            <column name="sec_sponsor_amount" precision="22" scale="0" />
+        </property>
+        <property name="outOfPocketId" type="string">
+            <column name="out_of_pocket_id" length="50" />
+        </property>
+        <property name="outOfPocketAmount" type="java.lang.Double">
+            <column name="out_of_pocket_amount" precision="22" scale="0" />
+        </property>
+        <property name="datePaid" type="date">
+            <column name="date_paid" length="10" not-null="true" />
+        </property>
+        <property name="timePaid" type="time">
+            <column name="time_paid" length="8" not-null="true" />
+        </property>
+        <property name="staffId" type="string">
+            <column name="staff_id" length="100" not-null="true" />
+        </property>
+        <property name="patientId" type="string">
+            <column name="patient_id" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" not-null="true" />
+        </property>
+        <property name="totalAmountPaid" type="double">
+            <column name="total_amount_paid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="unknownTwo" type="string">
+            <column name="unknown_two" />
+        </property>
+    </class>
+</hibernate-mapping>

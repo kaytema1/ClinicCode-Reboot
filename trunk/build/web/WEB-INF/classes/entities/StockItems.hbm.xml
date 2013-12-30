@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2013 8:19:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.StockItems" table="stock_items" catalog="extended">
+        <id name="code" type="string">
+            <column name="code" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="icd10" type="string">
+            <column name="icd10" length="65535" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" not-null="true" />
+        </property>
+        <property name="typeId" type="int">
+            <column name="type_id" not-null="true" />
+        </property>
+        <property name="markUp" type="double">
+            <column name="mark_up" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="unitOfPricing" type="string">
+            <column name="unit_of_pricing" length="20" not-null="true" />
+        </property>
+        <property name="qunaity" type="int">
+            <column name="qunaity" not-null="true" />
+        </property>
+        <property name="reOrderLevel" type="int">
+            <column name="re_order_level" not-null="true" />
+        </property>
+        <property name="emergencyLevel" type="int">
+            <column name="emergency_level" not-null="true" />
+        </property>
+        <property name="groupId" type="string">
+            <column name="group_id" length="10" not-null="true" />
+        </property>
+        <property name="theragroup" type="int">
+            <column name="theragroup" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

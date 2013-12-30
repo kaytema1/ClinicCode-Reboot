@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PatientRegistration" table="patient_registration" catalog="extended">
+        <id name="regId" type="java.lang.Integer">
+            <column name="reg_id" />
+            <generator class="identity" />
+        </id>
+        <property name="patientId" type="string">
+            <column name="patient_id" length="25" not-null="true" />
+        </property>
+        <property name="paymentStatus" type="boolean">
+            <column name="payment_status" not-null="true" />
+        </property>
+        <property name="amountPaid" type="double">
+            <column name="amount_paid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="datePaid" type="date">
+            <column name="date_paid" length="10" />
+        </property>
+        <property name="regFeeId" type="int">
+            <column name="reg_fee_id" not-null="true" />
+        </property>
+        <property name="copaid" type="boolean">
+            <column name="copaid" not-null="true" />
+        </property>
+        <property name="secondaryPayment" type="double">
+            <column name="secondary_payment" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="personallySupported" type="boolean">
+            <column name="personally_supported" not-null="true" />
+        </property>
+        <property name="personalSupportAmount" type="double">
+            <column name="personal_support_amount" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

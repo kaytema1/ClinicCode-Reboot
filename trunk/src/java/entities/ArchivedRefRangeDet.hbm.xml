@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.ArchivedRefRangeDet" table="archived_ref_range_det" catalog="extended">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="detailedinvRefrangeTypeId" type="int">
+            <column name="detailedinv_refrange_type_id" not-null="true" />
+        </property>
+        <property name="detFrom" type="string">
+            <column name="det_from" length="11" not-null="true" />
+        </property>
+        <property name="detTo" type="string">
+            <column name="det_to" length="11" not-null="true" />
+        </property>
+        <property name="MLower" type="string">
+            <column name="m_lower" length="11" not-null="true" />
+        </property>
+        <property name="MUpper" type="string">
+            <column name="m_upper" length="11" not-null="true" />
+        </property>
+        <property name="FLower" type="string">
+            <column name="f_lower" length="11" not-null="true" />
+        </property>
+        <property name="FUpper" type="string">
+            <column name="f_upper" length="11" not-null="true" />
+        </property>
+        <property name="oerderid" type="string">
+            <column name="oerderid" length="65535" not-null="true" />
+        </property>
+        <property name="patienttreatmentid" type="int">
+            <column name="patienttreatmentid" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PharmacyDiscount" table="pharmacy_discount" catalog="extended">
+        <id name="discountId" type="java.lang.Integer">
+            <column name="discount_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderid" type="string">
+            <column name="orderid" length="65535" not-null="true" />
+        </property>
+        <property name="patientId" type="string">
+            <column name="patient_id" length="65535" not-null="true" />
+        </property>
+        <property name="percentageDiscount" type="double">
+            <column name="percentage_discount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="discounted" type="double">
+            <column name="discounted" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="newAmount" type="double">
+            <column name="new_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="staffId" type="string">
+            <column name="staff_id" length="65535" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="65535" not-null="true" />
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

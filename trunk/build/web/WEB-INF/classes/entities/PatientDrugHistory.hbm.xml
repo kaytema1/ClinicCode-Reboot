@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PatientDrugHistory" table="patient_drug_history" catalog="extended">
+        <id name="patientDrugHistoryId" type="java.lang.Integer">
+            <column name="patient_drug_history_id" />
+            <generator class="identity" />
+        </id>
+        <property name="visitId" type="int">
+            <column name="visit_id" not-null="true" />
+        </property>
+        <property name="patientId" type="string">
+            <column name="patient_id" length="11" not-null="true" />
+        </property>
+        <property name="drugTaken" type="string">
+            <column name="drug_taken" not-null="true" />
+        </property>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

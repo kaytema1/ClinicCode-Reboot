@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.PurchaseOrder" table="purchase_order" catalog="extended">
+        <id name="purchaseOrderId" type="java.lang.Integer">
+            <column name="purchase_order_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="stafftableByOrderingStaff" class="entities.Stafftable" fetch="select">
+            <column name="ordering_staff" not-null="true" />
+        </many-to-one>
+        <many-to-one name="stafftableByApprovedByAccount" class="entities.Stafftable" fetch="select">
+            <column name="approved_by_account" />
+        </many-to-one>
+        <many-to-one name="stafftableByApprovedByManager" class="entities.Stafftable" fetch="select">
+            <column name="approved_by_manager" />
+        </many-to-one>
+        <property name="location" type="string">
+            <column name="location" length="100" not-null="true" />
+        </property>
+        <property name="dateOfOrder" type="date">
+            <column name="date_of_order" length="10" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="invoices" inverse="true">
+            <key>
+                <column name="orderid" not-null="true" />
+            </key>
+            <one-to-many class="entities.Invoice" />
+        </set>
+        <set name="purchaseOrderItemses" inverse="true">
+            <key>
+                <column name="orderid" not-null="true" />
+            </key>
+            <one-to-many class="entities.PurchaseOrderItems" />
+        </set>
+    </class>
+</hibernate-mapping>

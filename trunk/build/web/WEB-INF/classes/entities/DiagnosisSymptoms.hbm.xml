@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.DiagnosisSymptoms" table="diagnosis_symptoms" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="diagnosisId" type="int">
+            <column name="diagnosis_id" not-null="true" />
+        </property>
+        <property name="symptomsId" type="int">
+            <column name="symptoms_id" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

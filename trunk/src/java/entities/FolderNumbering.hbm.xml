@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.FolderNumbering" table="folder_numbering" catalog="extended">
+        <id name="numberingId" type="java.lang.Integer">
+            <column name="numbering_id" />
+            <generator class="identity" />
+        </id>
+        <property name="folderAbbreviationClinic" type="string">
+            <column name="folder_abbreviation_clinic" length="65535" not-null="true" />
+        </property>
+        <property name="folderAbbreviationDiagnostics" type="string">
+            <column name="folder_abbreviation_diagnostics" length="65535" not-null="true" />
+        </property>
+        <property name="folderAbbreviationPharmacy" type="string">
+            <column name="folder_abbreviation_pharmacy" length="65535" not-null="true" />
+        </property>
+        <property name="clinicStartNumber" type="int">
+            <column name="clinic_start_number" not-null="true" />
+        </property>
+        <property name="diagnosticStartNumber" type="int">
+            <column name="diagnostic_start_number" not-null="true" />
+        </property>
+        <property name="pharmacyStartNumber" type="int">
+            <column name="pharmacy_start_number" not-null="true" />
+        </property>
+        <property name="clinicCounter" type="int">
+            <column name="clinic_counter" not-null="true" />
+        </property>
+        <property name="diagnosticCounter" type="int">
+            <column name="diagnostic_counter" not-null="true" />
+        </property>
+        <property name="pharmacyCounter" type="int">
+            <column name="pharmacy_counter" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.ClientInfo" table="client_info" catalog="extended">
+        <id name="uniqueId" type="string">
+            <column name="unique_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="lastName" type="string">
+            <column name="last_name" length="50" not-null="true" />
+        </property>
+        <property name="otherNames" type="string">
+            <column name="other_names" length="100" not-null="true" />
+        </property>
+        <property name="dateOfBirth" type="date">
+            <column name="date_of_birth" length="10" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="100" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" unique="true" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="100" not-null="true" />
+        </property>
+        <property name="nextOfKin" type="string">
+            <column name="next_of_kin" length="65535" not-null="true" />
+        </property>
+        <property name="nextOfKinContact" type="string">
+            <column name="next_of_kin_contact" length="100" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="65535" not-null="true" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="65535" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="65535" not-null="true" />
+        </property>
+        <property name="employer" type="string">
+            <column name="employer" length="65535" not-null="true" />
+        </property>
+        <property name="dateOfRegistration" type="date">
+            <column name="date_of_registration" length="10" not-null="true" />
+        </property>
+        <property name="maritalStatus" type="string">
+            <column name="marital_status" length="20" not-null="true" />
+        </property>
+        <property name="lastClaimId" type="java.lang.Integer">
+            <column name="last_claim_id" />
+        </property>
+        <property name="lastVisitId" type="java.lang.Integer">
+            <column name="last_visit_id" />
+        </property>
+        <property name="folderNumber" type="string">
+            <column name="folder_number" length="100" />
+        </property>
+        <set name="pharmacyorders" inverse="true">
+            <key>
+                <column name="client_info_id" length="50" />
+            </key>
+            <one-to-many class="entities.Pharmacyorder" />
+        </set>
+    </class>
+</hibernate-mapping>

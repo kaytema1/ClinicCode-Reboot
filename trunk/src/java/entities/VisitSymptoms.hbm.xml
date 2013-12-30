@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.VisitSymptoms" table="visit_symptoms" catalog="extended">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="visitid" type="int">
+            <column name="visitid" not-null="true" />
+        </property>
+        <property name="patientid" type="string">
+            <column name="patientid" length="65535" not-null="true" />
+        </property>
+        <property name="symptomid" type="int">
+            <column name="symptomid" not-null="true" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Stafftable" table="stafftable" catalog="extended">
+        <id name="staffid" type="string">
+            <column name="staffid" />
+            <generator class="assigned" />
+        </id>
+        <property name="lastname" type="string">
+            <column name="lastname" not-null="true" />
+        </property>
+        <property name="othername" type="string">
+            <column name="othername" />
+        </property>
+        <property name="ssn" type="string">
+            <column name="ssn" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="dob" type="string">
+            <column name="dob" />
+        </property>
+        <property name="placeofbirth" type="string">
+            <column name="placeofbirth" />
+        </property>
+        <property name="yearofemployment" type="string">
+            <column name="yearofemployment" length="4" />
+        </property>
+        <property name="role" type="int">
+            <column name="role" not-null="true" />
+        </property>
+        <property name="extraduty" type="string">
+            <column name="extraduty" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" />
+        </property>
+        <property name="nextofkin" type="string">
+            <column name="nextofkin" />
+        </property>
+        <property name="nextofkincontact" type="string">
+            <column name="nextofkincontact" />
+        </property>
+        <property name="unit" type="int">
+            <column name="unit" not-null="true" />
+        </property>
+        <property name="imglocation" type="string">
+            <column name="imglocation" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" not-null="true" />
+        </property>
+        <set name="purchaseOrdersForOrderingStaff" inverse="true">
+            <key>
+                <column name="ordering_staff" not-null="true" />
+            </key>
+            <one-to-many class="entities.PurchaseOrder" />
+        </set>
+        <set name="requisitionsForRequestApprovedBy" inverse="true">
+            <key>
+                <column name="request_approved_by" />
+            </key>
+            <one-to-many class="entities.Requisition" />
+        </set>
+        <set name="purchaseOrdersForApprovedByAccount" inverse="true">
+            <key>
+                <column name="approved_by_account" />
+            </key>
+            <one-to-many class="entities.PurchaseOrder" />
+        </set>
+        <set name="requisitionsForRequestedBy" inverse="true">
+            <key>
+                <column name="requested_by" not-null="true" />
+            </key>
+            <one-to-many class="entities.Requisition" />
+        </set>
+        <set name="requisitionsForDeliveryApprovedBy" inverse="true">
+            <key>
+                <column name="delivery_approved_by" />
+            </key>
+            <one-to-many class="entities.Requisition" />
+        </set>
+        <set name="requisitionsForDeliveredBy" inverse="true">
+            <key>
+                <column name="delivered_by" />
+            </key>
+            <one-to-many class="entities.Requisition" />
+        </set>
+        <set name="generalStockMovementsForIssuedBy" inverse="true">
+            <key>
+                <column name="issued_by" not-null="true" />
+            </key>
+            <one-to-many class="entities.GeneralStockMovement" />
+        </set>
+        <set name="invoices" inverse="true">
+            <key>
+                <column name="received_by" not-null="true" />
+            </key>
+            <one-to-many class="entities.Invoice" />
+        </set>
+        <set name="generalStockMovementsForIssuedTo" inverse="true">
+            <key>
+                <column name="issued_to" />
+            </key>
+            <one-to-many class="entities.GeneralStockMovement" />
+        </set>
+        <set name="purchaseOrdersForApprovedByManager" inverse="true">
+            <key>
+                <column name="approved_by_manager" />
+            </key>
+            <one-to-many class="entities.PurchaseOrder" />
+        </set>
+        <set name="pharmacyordersForStaffId" inverse="true">
+            <key>
+                <column name="staff_id" />
+            </key>
+            <one-to-many class="entities.Pharmacyorder" />
+        </set>
+        <set name="pharmacyordersForDispensedBy" inverse="true">
+            <key>
+                <column name="dispensed_by" />
+            </key>
+            <one-to-many class="entities.Pharmacyorder" />
+        </set>
+        <set name="pharmacyordersForPharmacist" inverse="true">
+            <key>
+                <column name="pharmacist" />
+            </key>
+            <one-to-many class="entities.Pharmacyorder" />
+        </set>
+    </class>
+</hibernate-mapping>

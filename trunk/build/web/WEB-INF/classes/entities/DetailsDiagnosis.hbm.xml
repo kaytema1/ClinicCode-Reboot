@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.DetailsDiagnosis" table="details_diagnosis" catalog="extended">
+        <id name="detailid" type="java.lang.Integer">
+            <column name="detailid" />
+            <generator class="identity" />
+        </id>
+        <property name="diagnosticGroup" type="string">
+            <column name="diagnostic_group" length="10" not-null="true" />
+        </property>
+        <property name="gdrg" type="string">
+            <column name="gdrg" length="10" not-null="true" />
+        </property>
+        <property name="icd10" type="string">
+            <column name="icd10" length="10" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

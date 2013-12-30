@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2013 11:26:34 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="entities.Procedureorders" table="procedureorders" catalog="extended">
+        <id name="orderid" type="java.lang.Integer">
+            <column name="orderid" />
+            <generator class="identity" />
+        </id>
+        <property name="visitid" type="int">
+            <column name="visitid" not-null="true" />
+        </property>
+        <property name="patientid" type="string">
+            <column name="patientid" length="100" not-null="true" />
+        </property>
+        <property name="total" type="double">
+            <column name="total" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="amoutpaid" type="double">
+            <column name="amoutpaid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50" not-null="true" />
+        </property>
+        <property name="orderdate" type="timestamp">
+            <column name="orderdate" length="19" not-null="true" />
+        </property>
+        <property name="orderedby" type="string">
+            <column name="orderedby" not-null="true" />
+        </property>
+        <property name="performedby" type="string">
+            <column name="performedby" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
